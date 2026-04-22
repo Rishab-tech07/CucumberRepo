@@ -6,12 +6,10 @@ import Page.LoginPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
+import utils.ConfigReader;
 
 
 public class PetStoreSteps {
-
-
 
    BasePage base = new BasePage();
    
@@ -42,7 +40,7 @@ public class PetStoreSteps {
    public void user_login_in_its_account() {
        // Write code here that turns the phrase above into concrete actions
        login.clickSignIn();
-       login.login("2478573","12345");
+       login.login(ConfigReader.getProperties().getProperty("username"),ConfigReader.getProperties().getProperty("Password"));
    }
    
    @Then("user verfies its Account")
@@ -50,6 +48,5 @@ public class PetStoreSteps {
        // Write code here that turns the phrase above into concrete actions
        login.verifyAccount();
    }
-
 
 }

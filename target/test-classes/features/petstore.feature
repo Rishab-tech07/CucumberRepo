@@ -1,7 +1,6 @@
 Feature: PetStore User Actions
 
 
-
 Scenario: Launch Application
 
 Given user launches application

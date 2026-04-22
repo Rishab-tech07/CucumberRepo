@@ -3,6 +3,8 @@ package Page;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import utils.ConfigReader;
+
 public class BasePage {
 
     protected static WebDriver driver;
@@ -11,7 +13,7 @@ public class BasePage {
         if (driver == null) {
             driver = new ChromeDriver();
             driver.manage().window().maximize();
-            driver.get("https://petstore.octoperf.com/");
+            driver.get(ConfigReader.getProperties().getProperty("BaseURL"));
         }
     }
 
