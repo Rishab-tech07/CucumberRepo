@@ -2,6 +2,8 @@ package Page;
 
 
 
+import static org.testng.Assert.assertEquals;
+
 import org.openqa.selenium.By;
 
 
@@ -18,12 +20,11 @@ public class LoginPage extends BasePage {
 
    By loginBtn = By.name("signon");
 
-
-
+   By verifylogin=By.id("WelcomeContent");
    public void clickSignIn() {
 
        driver.findElement(signIn).click();
-
+       
    }
 
 
@@ -38,6 +39,13 @@ public class LoginPage extends BasePage {
 
        driver.findElement(loginBtn).click();
 
+   }
+   
+   public void verifyAccount() {
+	   
+	   String wel=driver.findElement(verifylogin).getText();
+	   
+	   assertEquals("Welcome Rish!",wel);
    }
 
 }

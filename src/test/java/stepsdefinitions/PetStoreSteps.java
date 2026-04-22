@@ -37,6 +37,19 @@ public class PetStoreSteps {
        // Write code here that turns the phrase above into concrete actions
        home.verifyTitle();
    }
+   
+   @Then("User Login In Its Account")
+   public void user_login_in_its_account() {
+       // Write code here that turns the phrase above into concrete actions
+       login.clickSignIn();
+       login.login("2478573","12345");
+   }
+   
+   @Then("user verfies its Account")
+   public void user_verfies_its_account() {
+       // Write code here that turns the phrase above into concrete actions
+       login.verifyAccount();
+   }
 
 
 }
